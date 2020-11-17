@@ -29,7 +29,7 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
  * @author ADM-DGIP
  */
 @Entity
-@Table(name = "menu", catalog = "uisek-admin-inscripcion", schema = "")
+@Table(name = "menu")
 @XmlRootElement
 public class Menu implements Serializable {
 

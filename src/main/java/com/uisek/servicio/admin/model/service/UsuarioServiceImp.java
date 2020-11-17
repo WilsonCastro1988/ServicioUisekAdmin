@@ -20,7 +20,7 @@ public class UsuarioServiceImp implements UsuarioService {
 	}
 
 	@Override
-	public Usuario findById(Long id) {
+	public Usuario findById(Integer id) {
 		return repo.findById(id).orElse(null);
 	}
 
@@ -30,7 +30,7 @@ public class UsuarioServiceImp implements UsuarioService {
 	}
 
 	@Override
-	public void deleteById(Long id) {
+	public void deleteById(Integer id) {
 		repo.deleteById(id);
 	}
 

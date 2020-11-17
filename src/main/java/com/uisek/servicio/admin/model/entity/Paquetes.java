@@ -26,7 +26,7 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
  * @author ADM-DGIP
  */
 @Entity
-@Table(name="paquetes",catalog = "cempresariales_admin", schema = "")
+@Table(name="paquetes",catalog = "", schema = "")
 @XmlRootElement
 public class Paquetes implements Serializable {
 
@@ -38,22 +38,22 @@ public class Paquetes implements Serializable {
     private Long idPaquete;
     @Column(name = "numero_aplicacion")
     private Integer numeroAplicacion;
-    @Column(name = "numero_incidentes")
-    private Integer numeroIncidentes;
+    @Column(name = "numero_matriculas")
+    private Integer numeroMatriculas;
     @Column(name = "numero_menus")
     private Integer numeroMenus;
-    @Column(name = "numero_ordenes_trabajo")
-    private Integer numeroOrdenesTrabajo;
+    @Column(name = "numero_cursos")
+    private Integer numeroCursos;
     @Column(name = "numero_perfil_usuario")
     private Integer numeroPerfilUsuario;
     @Column(name = "numero_perfiles")
     private Integer numeroPerfiles;
     @Column(name = "numero_permisos")
     private Integer numeroPermisos;
-    @Column(name = "numero_tecnicos")
-    private Integer numeroTecnicos;
     @Column(name = "numero_usuarios")
     private Integer numeroUsuarios;
+    @Column(name = "numero_Carreras")
+    private Integer numeroCarreras;
     @OneToMany(mappedBy = "paquete")
     @JsonBackReference
     private List<TipoCuenta> tipoCuentaList;
@@ -61,122 +61,94 @@ public class Paquetes implements Serializable {
     public Paquetes() {
     }
 
-    public Paquetes(Long idPaquete) {
-        this.idPaquete = idPaquete;
-    }
+	public Long getIdPaquete() {
+		return idPaquete;
+	}
 
-    public Long getIdPaquete() {
-        return idPaquete;
-    }
+	public void setIdPaquete(Long idPaquete) {
+		this.idPaquete = idPaquete;
+	}
 
-    public void setIdPaquete(Long idPaquete) {
-        this.idPaquete = idPaquete;
-    }
+	public Integer getNumeroAplicacion() {
+		return numeroAplicacion;
+	}
 
-    public Integer getNumeroAplicacion() {
-        return numeroAplicacion;
-    }
+	public void setNumeroAplicacion(Integer numeroAplicacion) {
+		this.numeroAplicacion = numeroAplicacion;
+	}
 
-    public void setNumeroAplicacion(Integer numeroAplicacion) {
-        this.numeroAplicacion = numeroAplicacion;
-    }
+	public Integer getNumeroMatriculas() {
+		return numeroMatriculas;
+	}
 
-    public Integer getNumeroIncidentes() {
-        return numeroIncidentes;
-    }
+	public void setNumeroMatriculas(Integer numeroMatriculas) {
+		this.numeroMatriculas = numeroMatriculas;
+	}
 
-    public void setNumeroIncidentes(Integer numeroIncidentes) {
-        this.numeroIncidentes = numeroIncidentes;
-    }
+	public Integer getNumeroMenus() {
+		return numeroMenus;
+	}
 
-    public Integer getNumeroMenus() {
-        return numeroMenus;
-    }
+	public void setNumeroMenus(Integer numeroMenus) {
+		this.numeroMenus = numeroMenus;
+	}
 
-    public void setNumeroMenus(Integer numeroMenus) {
-        this.numeroMenus = numeroMenus;
-    }
+	public Integer getNumeroCursos() {
+		return numeroCursos;
+	}
 
-    public Integer getNumeroOrdenesTrabajo() {
-        return numeroOrdenesTrabajo;
-    }
+	public void setNumeroCursos(Integer numeroCursos) {
+		this.numeroCursos = numeroCursos;
+	}
 
-    public void setNumeroOrdenesTrabajo(Integer numeroOrdenesTrabajo) {
-        this.numeroOrdenesTrabajo = numeroOrdenesTrabajo;
-    }
+	public Integer getNumeroPerfilUsuario() {
+		return numeroPerfilUsuario;
+	}
 
-    public Integer getNumeroPerfilUsuario() {
-        return numeroPerfilUsuario;
-    }
+	public void setNumeroPerfilUsuario(Integer numeroPerfilUsuario) {
+		this.numeroPerfilUsuario = numeroPerfilUsuario;
+	}
 
-    public void setNumeroPerfilUsuario(Integer numeroPerfilUsuario) {
-        this.numeroPerfilUsuario = numeroPerfilUsuario;
-    }
+	public Integer getNumeroPerfiles() {
+		return numeroPerfiles;
+	}
 
-    public Integer getNumeroPerfiles() {
-        return numeroPerfiles;
-    }
+	public void setNumeroPerfiles(Integer numeroPerfiles) {
+		this.numeroPerfiles = numeroPerfiles;
+	}
 
-    public void setNumeroPerfiles(Integer numeroPerfiles) {
-        this.numeroPerfiles = numeroPerfiles;
-    }
+	public Integer getNumeroPermisos() {
+		return numeroPermisos;
+	}
 
-    public Integer getNumeroPermisos() {
-        return numeroPermisos;
-    }
+	public void setNumeroPermisos(Integer numeroPermisos) {
+		this.numeroPermisos = numeroPermisos;
+	}
 
-    public void setNumeroPermisos(Integer numeroPermisos) {
-        this.numeroPermisos = numeroPermisos;
-    }
+	public Integer getNumeroUsuarios() {
+		return numeroUsuarios;
+	}
 
-    public Integer getNumeroTecnicos() {
-        return numeroTecnicos;
-    }
+	public void setNumeroUsuarios(Integer numeroUsuarios) {
+		this.numeroUsuarios = numeroUsuarios;
+	}
 
-    public void setNumeroTecnicos(Integer numeroTecnicos) {
-        this.numeroTecnicos = numeroTecnicos;
-    }
+	public Integer getNumeroCarreras() {
+		return numeroCarreras;
+	}
 
-    public Integer getNumeroUsuarios() {
-        return numeroUsuarios;
-    }
+	public void setNumeroCarreras(Integer numeroCarreras) {
+		this.numeroCarreras = numeroCarreras;
+	}
 
-    public void setNumeroUsuarios(Integer numeroUsuarios) {
-        this.numeroUsuarios = numeroUsuarios;
-    }
+	public List<TipoCuenta> getTipoCuentaList() {
+		return tipoCuentaList;
+	}
 
-    @XmlTransient
-    public List<TipoCuenta> getTipoCuentaList() {
-        return tipoCuentaList;
-    }
+	public void setTipoCuentaList(List<TipoCuenta> tipoCuentaList) {
+		this.tipoCuentaList = tipoCuentaList;
+	}
 
-    public void setTipoCuentaList(List<TipoCuenta> tipoCuentaList) {
-        this.tipoCuentaList = tipoCuentaList;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (idPaquete != null ? idPaquete.hashCode() : 0);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Paquetes)) {
-            return false;
-        }
-        Paquetes other = (Paquetes) object;
-        if ((this.idPaquete == null && other.idPaquete != null) || (this.idPaquete != null && !this.idPaquete.equals(other.idPaquete))) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return "javaapplication2.Paquetes[ idPaquete=" + idPaquete + " ]";
-    }
+    
     
 }

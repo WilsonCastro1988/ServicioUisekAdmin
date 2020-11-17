@@ -35,7 +35,7 @@ public class PerfilUsuarioController {
 		return service.findAll();
 	}
 
-	@GetMapping("/ver/{idTabla1}/{idTabla2}O")
+	@GetMapping("/ver/{idTabla1}/{idTabla2}")
 	public PerfilHasUsuario verItem(@PathVariable Long idTabla1, @PathVariable Long idTabla2) {
 		return service.findById(new PerfilHasUsuarioPK(idTabla1, idTabla2));
 	}

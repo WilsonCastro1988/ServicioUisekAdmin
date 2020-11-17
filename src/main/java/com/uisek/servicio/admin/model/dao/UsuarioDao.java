@@ -4,7 +4,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.uisek.servicio.admin.model.entity.Usuario;
 
-public interface UsuarioDao extends JpaRepository<Usuario, Long>{
+public interface UsuarioDao extends JpaRepository<Usuario, Integer>{
 
 	
 	public Usuario findByNombreUsuario(String nombreUsuario);

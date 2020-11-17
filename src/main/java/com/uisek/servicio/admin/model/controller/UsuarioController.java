@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.uisek.servicio.admin.model.entity.Usuario;
+import com.uisek.servicio.admin.model.service.PerfilServiceImp;
 import com.uisek.servicio.admin.model.service.UsuarioServiceImp;
 
 @RestController
@@ -27,14 +28,31 @@ public class UsuarioController {
 
 	@Autowired
 	private UsuarioServiceImp service;
+	
 
 	@GetMapping("/listar")
 	public List<Usuario> listarUsuario() {
 		return service.findAll();
 	}
+	
+	@GetMapping("/login/{email}/{password}")
+	public Usuario loginUsuario(@PathVariable String email, @PathVariable String password) {
+		Usuario user = new Usuario();
+		try {
+			user = service.findByNombreUsuarioAndClave(email, password);
+			
+			
+			
+			
+			return user;
+		} catch (Exception e) {
+			return null;
+		}
+
+	}
 
 	@GetMapping("/ver/{id}")
-	public Usuario verItem(@PathVariable Long id) {
+	public Usuario verItem(@PathVariable Integer id) {
 		return service.findById(id);
 	}
 
@@ -46,7 +64,7 @@ public class UsuarioController {
 
 	@PutMapping("/editar/{id}")
 	@ResponseStatus(HttpStatus.CREATED)
-	public Usuario editar(@RequestBody Usuario entidad, @PathVariable Long id) {
+	public Usuario editar(@RequestBody Usuario entidad, @PathVariable Integer id) {
 		Usuario entidadDb = service.findById(id);
 
 		entidad.setIdUsuario(entidadDb.getIdUsuario());
@@ -55,7 +73,7 @@ public class UsuarioController {
 	}
 
 	@DeleteMapping("/eliminar/{id}")
-	public void eliminar(@PathVariable Long id) {
+	public void eliminar(@PathVariable Integer id) {
 		service.deleteById(id);
 	}
 

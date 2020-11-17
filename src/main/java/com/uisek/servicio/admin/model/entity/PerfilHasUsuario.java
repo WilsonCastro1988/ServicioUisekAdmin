@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
  * @author ADM-DGIP
  */
 @Entity
-@Table(name = "perfil_usuario", catalog = "uisek-admin-inscripcion", schema = "public")
+@Table(name = "perfil_usuario", catalog = "uisek-admin-inscripcion", schema = "")
 @XmlRootElement
 public class PerfilHasUsuario implements Serializable {
 

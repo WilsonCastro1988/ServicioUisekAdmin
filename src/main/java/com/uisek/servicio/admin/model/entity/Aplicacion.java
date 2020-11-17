@@ -26,7 +26,7 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
  * @author ADM-DGIP
  */
 @Entity
-@Table(name="aplicacion",catalog = "", schema = "")
+@Table(name="aplicacion",catalog = "uisek-admin-inscripcion", schema = "public")
 @XmlRootElement
 public class Aplicacion implements Serializable {
 
